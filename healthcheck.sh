@@ -34,12 +34,12 @@ ps aux --sort=-%mem | head -n 6 >> $log_file
 #check if services are running
 echo "Service Status:" >> $log_file
 
-for service  in nginx ssh;do
-    if systemctl is-active --quiet $service;then
-       echo "$service is running">> $log_file
-    
+echo "Service Status:" >> "$log_file"
+for service in $(systemctl list-units --type=service --all --no-legend | awk '{print $1}'); do
+    if systemctl is-active --quiet "$service"; then
+        echo "$service is running" >> "$log_file"
     else
-       echo "$service is Not running" >> $log_file
+        echo "$service is Not running" >> "$log_file"
     fi
 done
 
