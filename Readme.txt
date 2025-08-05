@@ -1,11 +1,11 @@
-# Healthcheck Script
+ Healthcheck Script
 
-## Overview
+ Overview
 This project contains a Bash script named `healthcheck.sh` that gathers system health information and logs it into a file called `Healthlog.txt`.
 
----
 
-## Features
+
+Features
 
 The script outputs and logs the following information:
 
@@ -17,4 +17,5 @@ The script outputs and logs the following information:
 - Top 5 memory-consuming processes
 - Status of specific services (nginx and ssh)
 
----
+
+
