@@ -32,16 +32,23 @@ echo "Top 5 Memory Consuming Processes:">> $log_file
 ps aux --sort=-%mem | head -n 6 >> $log_file
 
 #check if services are running
-echo "Service Status:" >> $log_file
-
-echo "Service Status:" >> "$log_file"
-for service in $(systemctl list-units --type=service --all --no-legend | awk '{print $1}'); do
-    if systemctl is-active --quiet "$service"; then
-        echo "$service is running" >> "$log_file"
-    else
-        echo "$service is Not running" >> "$log_file"
-    fi
-done
+if [ "$#" -eq 0 ]; then
+    echo "No services were specified to check." >> $LOGFILE
+else
+    echo "Service Status:" >> $LOGFILE
+    for SERVICE in "$@"; do
+        STATUS=$(systemctl is-active $SERVICE 2>/dev/null)
+        if [ "$STATUS" == "active" ]; then
+            echo "$SERVICE: running" >> $LOGFILE
+        elif [ "$STATUS" == "inactive" ]; then
+            echo "$SERVICE: not running" >> $LOGFILE
+        elif [ "$STATUS" == "unknown" ]; then
+            echo "$SERVICE: unknown service" >> $LOGFILE
+        else
+            echo "$SERVICE: $STATUS" >> $LOGFILE
+        fi
+    done
+fi
 
 echo "" >> "$log_file"
 
