@@ -1,0 +1,119 @@
+-------------------------------------------------------------
+Health Check -2025-08-05 07:06:23
+-------------------------------------------------------------
+ Date & Time : 2025-08-05 07:06:23
+ Uptime: up 14 hours, 38 minutes
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            3834         732        2857           5         396        3101
+Swap:           1024           0        1024
+ Disk usage:
+Filesystem      Size  Used Avail Use% Mounted on
+none            1.9G     0  1.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            1.9G  4.0K  1.9G   1% /mnt/wsl
+none            1.9G  560K  1.9G   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/sdd       1007G   57M  956G   1% /mnt/wsl/docker-desktop/docker-desktop-user-distro
+/dev/loop0      614M  614M     0 100% /mnt/wsl/docker-desktop/cli-tools
+drivers         238G  101G  137G  43% /usr/lib/wsl/drivers
+/dev/sdf       1007G  1.9G  954G   1% /
+none            1.9G   76K  1.9G   1% /mnt/wslg
+none            1.9G     0  1.9G   0% /usr/lib/wsl/lib
+rootfs          1.9G  2.7M  1.9G   1% /init
+none            1.9G  524K  1.9G   1% /run
+none            1.9G     0  1.9G   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   76K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   76K  1.9G   1% /mnt/wslg/doc
+C:\             238G  101G  137G  43% /mnt/c
+tmpfs           1.9G   16K  1.9G   1% /run/user/1000
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         229  0.0  0.5 107012 22272 ?        Ssl  05:41   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        4214  0.0  0.5 370056 20224 ?        Ssl  07:01   0:00 /usr/libexec/packagekitd
+root          58  0.1  0.3  66744 15148 ?        S<s  05:41   0:07 /usr/lib/systemd/systemd-journald
+root         201  0.0  0.3 1756096 12416 ?       Ssl  05:41   0:00 /usr/libexec/wsl-pro-service -vv
+systemd+     122  0.0  0.3  21452 12288 ?        Ss   05:41   0:00 /usr/lib/systemd/systemd-resolved
+Service Status:
+nginx is Not running
+ssh is Not running
+
+-------------------------------------------------------------
+Health Check -2025-08-05 07:07:46
+-------------------------------------------------------------
+ Date & Time : 2025-08-05 07:07:46
+ Uptime: up 14 hours, 39 minutes
+CPU Load:  0.00, 0.04, 0.04
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            3834         731        2850           5         403        3102
+Swap:           1024           0        1024
+ Disk usage:
+Filesystem      Size  Used Avail Use% Mounted on
+none            1.9G     0  1.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            1.9G  4.0K  1.9G   1% /mnt/wsl
+none            1.9G  560K  1.9G   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/sdd       1007G   57M  956G   1% /mnt/wsl/docker-desktop/docker-desktop-user-distro
+/dev/loop0      614M  614M     0 100% /mnt/wsl/docker-desktop/cli-tools
+drivers         238G  101G  137G  43% /usr/lib/wsl/drivers
+/dev/sdf       1007G  1.9G  954G   1% /
+none            1.9G   76K  1.9G   1% /mnt/wslg
+none            1.9G     0  1.9G   0% /usr/lib/wsl/lib
+rootfs          1.9G  2.7M  1.9G   1% /init
+none            1.9G  520K  1.9G   1% /run
+none            1.9G     0  1.9G   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   76K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   76K  1.9G   1% /mnt/wslg/doc
+C:\             238G  101G  137G  43% /mnt/c
+tmpfs           1.9G   16K  1.9G   1% /run/user/1000
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         229  0.0  0.5 107012 22272 ?        Ssl  05:41   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          58  0.1  0.3  66744 15136 ?        S<s  05:41   0:07 /usr/lib/systemd/systemd-journald
+root         201  0.0  0.3 1756096 12416 ?       Ssl  05:41   0:00 /usr/libexec/wsl-pro-service -vv
+systemd+     122  0.0  0.3  21452 12288 ?        Ss   05:41   0:00 /usr/lib/systemd/systemd-resolved
+root           1  0.0  0.3  21908 12236 ?        Ss   05:41   0:02 /sbin/init
+Service Status:
+nginx is Not running
+ssh is Not running
+
+-------------------------------------------------------------
+Health Check -2025-08-05 07:08:11
+-------------------------------------------------------------
+ Date & Time : 2025-08-05 07:08:11
+ Uptime: up 14 hours, 40 minutes
+CPU Load:  0.00, 0.03, 0.04
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            3834         734        2845           5         407        3100
+Swap:           1024           0        1024
+ Disk usage:
+Filesystem      Size  Used Avail Use% Mounted on
+none            1.9G     0  1.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none            1.9G  4.0K  1.9G   1% /mnt/wsl
+none            1.9G  560K  1.9G   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/sdd       1007G   57M  956G   1% /mnt/wsl/docker-desktop/docker-desktop-user-distro
+/dev/loop0      614M  614M     0 100% /mnt/wsl/docker-desktop/cli-tools
+drivers         238G  101G  137G  43% /usr/lib/wsl/drivers
+/dev/sdf       1007G  1.9G  954G   1% /
+none            1.9G   76K  1.9G   1% /mnt/wslg
+none            1.9G     0  1.9G   0% /usr/lib/wsl/lib
+rootfs          1.9G  2.7M  1.9G   1% /init
+none            1.9G  520K  1.9G   1% /run
+none            1.9G     0  1.9G   0% /run/lock
+none            1.9G     0  1.9G   0% /run/shm
+none            1.9G   76K  1.9G   1% /mnt/wslg/versions.txt
+none            1.9G   76K  1.9G   1% /mnt/wslg/doc
+C:\             238G  101G  137G  43% /mnt/c
+tmpfs           1.9G   16K  1.9G   1% /run/user/1000
+Top 5 Memory Consuming Processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         229  0.0  0.5 107012 22272 ?        Ssl  05:41   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root          58  0.1  0.3  66744 15160 ?        S<s  05:41   0:07 /usr/lib/systemd/systemd-journald
+root         201  0.0  0.3 1756096 12416 ?       Ssl  05:41   0:00 /usr/libexec/wsl-pro-service -vv
+systemd+     122  0.0  0.3  21452 12288 ?        Ss   05:41   0:00 /usr/lib/systemd/systemd-resolved
+root           1  0.0  0.3  21908 12236 ?        Ss   05:41   0:02 /sbin/init
+Service Status:
+nginx is Not running
+ssh is Not running
+
