@@ -1,0 +1,9 @@
+[2025-08-06 10:10:53] Backup started to /home/user/backups/2025-08-06_10-10-53
+[2025-08-06 10:10:53] Backed up: testfile1.txt -> /home/user/backups/2025-08-06_10-10-53/testfile1.txt.bak
+[2025-08-06 10:10:53] Backed up: testfile2.txt -> /home/user/backups/2025-08-06_10-10-53/testfile2.txt.bak
+[2025-08-06 10:10:53] Backup finished.
+[2025-08-06 10:12:58] Backup started to /home/user/backups/2025-08-06_10-12-58
+[2025-08-06 10:12:58] Backed up: testfile1.txt -> /home/user/backups/2025-08-06_10-12-58/testfile1.txt.bak
+[2025-08-06 10:12:58] Backed up: testfile2.txt -> /home/user/backups/2025-08-06_10-12-58/testfile2.txt.bak
+[2025-08-06 10:12:58] Compressed backup created: /home/user/backups/backup_2025-08-06_10-12-58.tar.gz
+[2025-08-06 10:12:58] Backup finished.

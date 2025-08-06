@@ -2,7 +2,6 @@
 
 # -----------------------------
 # Bash File Backup Tool
-# 
 # -----------------------------
 
 # Variables
@@ -69,7 +68,7 @@ files=()
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
         --compress) compress=true ;;
-        --remote) remote=true ;;  # Placeholder
+        --remote) remote=true ;;  # Placeholder for future remote backup
         --no-log) nolog=true ;;
         --help) show_help; exit 0 ;;
         --recent) shift; recent="$1" ;;
@@ -86,7 +85,6 @@ log "Backup started to $backup_dir"
 
 if [ -n "$recent" ]; then
     log "Backing up files modified in last $recent"
-    # For demo, using -1 day, not parsing '1h' or other durations yet
     backup_recent_files
 else
     for file in "${files[@]}"; do
@@ -101,3 +99,4 @@ fi
 log "Backup finished."
 
 echo "Backup complete."
+
