@@ -8,7 +8,7 @@
 # Variables
 timestamp=$(date "+%Y-%m-%d_%H-%M-%S")
 backup_dir="$HOME/backups/$timestamp"
-log_file="$HOME/backups/backup.log"
+log_file="./backup.log"
 compress=false
 remote=false
 recent=""
