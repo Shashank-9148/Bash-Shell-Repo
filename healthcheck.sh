@@ -1,37 +1,44 @@
 #!/bin/bash
 
-# File:Healthcheck.sh
+# Set log file name with timestamp
+LOGFILE="healthlog.txt"
+TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
-#create timestamp
-timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-log_file="Healthlog.txt"
+echo "===================================" >> $LOGFILE
+echo "Health Check - $TIMESTAMP" >> $LOGFILE
+echo "===================================" >> $LOGFILE
 
-echo "-------------------------------------------------------------">> $log_file
-echo "Health Check -$timestamp" >> $log_file
-echo "-------------------------------------------------------------">> $log_file
+# System Date and Time
+echo "System Date and Time:" >> $LOGFILE
+date >> $LOGFILE
+echo "" >> $LOGFILE
 
-#System date and time
-echo " Date & Time : $timestamp" >> $log_file
+# Uptime
+echo "System Uptime:" >> $LOGFILE
+uptime >> $LOGFILE
+echo "" >> $LOGFILE
 
-#System uptime
-echo " Uptime: $(uptime -p)" >> $log_file
+# CPU Load
+echo "CPU Load:" >> $LOGFILE
+uptime | awk -F'load average:' '{ print $2 }' >> $LOGFILE
+echo "" >> $LOGFILE
 
-#Cpu load
-echo "CPU Load: $(uptime | awk -F'load average:' '{print $2 }')" >> $log_file
+# Memory Usage
+echo "Memory Usage (in MB):" >> $LOGFILE
+free -m >> $LOGFILE
+echo "" >> $LOGFILE
 
-#Memory usage
-echo "Memory usage:" >>$log_file
-free -m >> $log_file
+# Disk Usage
+echo "Disk Usage:" >> $LOGFILE
+df -h >> $LOGFILE
+echo "" >> $LOGFILE
 
-#Disk usage
-echo " Disk usage:" >>$log_file
-df -h >> $log_file
+# Top 5 Memory-Consuming Processes
+echo "Top 5 Memory-Consuming Processes:" >> $LOGFILE
+ps aux --sort=-%mem | head -n 6 >> $LOGFILE
+echo "" >> $LOGFILE
 
-#Top 5 memory consuming processes
-echo "Top 5 Memory Consuming Processes:">> $log_file
-ps aux --sort=-%mem | head -n 6 >> $log_file
-
-#check if services are running
+# Check Services (from command-line arguments)
 if [ "$#" -eq 0 ]; then
     echo "No services were specified to check." >> $LOGFILE
 else
@@ -50,7 +57,6 @@ else
     done
 fi
 
-echo "" >> "$log_file"
 
 
 
