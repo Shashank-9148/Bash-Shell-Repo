@@ -12,6 +12,8 @@ compress=false
 remote=false
 recent=""
 nolog=false
+success_count=0
+failure_count=0
 
 mkdir -p "$backup_dir"
 
@@ -30,7 +32,7 @@ show_help() {
     echo ""
     echo "Options:"
     echo "  --compress         Compress the backup into .tar.gz"
-    echo "  --remote           Upload to remote server (configure manually)"
+    echo "  --remote           Upload to remote server (not implemented)"
     echo "  --recent [1d|1h]   Backup recently modified files"
     echo "  --no-log           Disable logging"
     echo "  --help             Show this help message"
@@ -41,8 +43,10 @@ backup_file() {
     if [ -f "$file" ]; then
         cp "$file" "$backup_dir/$(basename "$file").bak"
         log "Backed up: $file -> $backup_dir/$(basename "$file").bak"
+        ((success_count++))
     else
         log "Skipped (not found): $file"
+        ((failure_count++))
     fi
 }
 
@@ -50,10 +54,11 @@ compress_backup() {
     tar_file="$HOME/backups/backup_$timestamp.tar.gz"
     tar -czf "$tar_file" -C "$backup_dir" .
     log "Compressed backup created: $tar_file"
-    rm -r "$backup_dir"  # Clean up folder after compression
+    rm -r "$backup_dir"
 }
 
 backup_recent_files() {
+    log "Backing up files modified in last $recent"
     find . -type f -mtime -1 | while read -r recent_file; do
         backup_file "$recent_file"
     done
@@ -68,7 +73,7 @@ files=()
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
         --compress) compress=true ;;
-        --remote) remote=true ;;  # Placeholder for future remote backup
+        --remote) remote=true ;;  # Placeholder
         --no-log) nolog=true ;;
         --help) show_help; exit 0 ;;
         --recent) shift; recent="$1" ;;
@@ -84,7 +89,6 @@ done
 log "Backup started to $backup_dir"
 
 if [ -n "$recent" ]; then
-    log "Backing up files modified in last $recent"
     backup_recent_files
 else
     for file in "${files[@]}"; do
@@ -98,5 +102,24 @@ fi
 
 log "Backup finished."
 
-echo "Backup complete."
+# -----------------------------
+# Summary
+# -----------------------------
+
+{
+  echo ""
+  echo " Summary:"
+  echo "  Total Files Provided : ${#files[@]}"
+  echo "  Successfully Backed Up: $success_count"
+  echo "  Failed (Not Found): $failure_count"
+  echo "  Mode: $([[ "$compress" = true ]] && echo "Compressed" || echo "Individual File Copy")"
+  echo "---------------------------------------------"
+  echo ""
+} >> "$log_file"
+
+echo "Backup complete. Summary:"
+echo "  Success : $success_count"
+echo "  Failed  : $failure_count"
+echo "  Log     : $log_file"
+
 
